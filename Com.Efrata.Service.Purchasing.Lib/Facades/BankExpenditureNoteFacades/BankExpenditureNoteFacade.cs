@@ -1508,7 +1508,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.BankExpenditureNoteFacades
             cellHeaderCS2.HorizontalAlignment = Element.ALIGN_CENTER;
             headerTable.AddCell(cellHeaderCS2);
 
-            cellHeaderBody.Phrase = new Phrase("PT. EFRATA RETAILINDO", normal_font);
+            cellHeaderBody.Phrase = new Phrase("PT. EFRATA GARMINDO UTAMA", normal_font);
             headerTable1.AddCell(cellHeaderBody);
             cellHeaderBody.Phrase = new Phrase("Banaran, Grogol, Sukoharjo, Jawa Tengah", normal_font);
             headerTable1.AddCell(cellHeaderBody);
@@ -2129,28 +2129,19 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.BankExpenditureNoteFacades
             cellFooter.Phrase = new Phrase("", normal_font);
             footerTable.AddCell(cellFooter);
 
-            PdfPTable signatureTable = new PdfPTable(3);
+            PdfPTable signatureTable = new PdfPTable(2);
             PdfPCell signatureCell = new PdfPCell() { HorizontalAlignment = Element.ALIGN_CENTER };
             signatureCell.Phrase = new Phrase("Bag. Keuangan", normal_font);
             signatureTable.AddCell(signatureCell);
 
-            signatureCell.Colspan = 2;
             signatureCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            signatureCell.Phrase = new Phrase("Direksi", normal_font);
+            signatureCell.Phrase = new Phrase("Bag. Akuntansi", normal_font);
             signatureTable.AddCell(signatureCell);
 
             signatureTable.AddCell(new PdfPCell()
             {
                 Phrase = new Phrase("---------------------------", normal_font),
                 FixedHeight = 40,
-                VerticalAlignment = Element.ALIGN_BOTTOM,
-                HorizontalAlignment = Element.ALIGN_CENTER
-            });
-            signatureTable.AddCell(new PdfPCell()
-            {
-                Phrase = new Phrase("---------------------------", normal_font),
-                FixedHeight = 40,
-                Border = Rectangle.NO_BORDER,
                 VerticalAlignment = Element.ALIGN_BOTTOM,
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
