@@ -558,20 +558,22 @@ namespace Com.Efrata.Service.Purchasing.Lib.PDFTemplates
             tableSignature.AddCell(cellSignatureContent);
 
             cellSignatureContent.Colspan = 2;
-            cellSignatureContent.Phrase = new Phrase("Menyetujui,", bold_font3);
+            cellSignatureContent.Phrase = new Phrase("Disetujui,", bold_font3);
             tableSignature.AddCell(cellSignatureContent);
             cellSignatureContent.Phrase = new Phrase("Mengetahui,", bold_font3);
             cellSignatureContent.Colspan = 2;
             tableSignature.AddCell(cellSignatureContent);
 
             cellSignatureContent.Colspan = 0;
-            cellSignatureContent.Phrase = new Phrase("Hormat Kami,", bold_font3);
+            cellSignatureContent.Phrase = new Phrase("Dibuat,", bold_font3);
             tableSignature.AddCell(cellSignatureContent);
 
             if (AmountPDF > 3000000)
             {
-                cellSignatureContent.Colspan = 2;
-                cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n(   Johanes Tjahjadi    )", bold_font3);
+                cellSignatureContent.Colspan = 0;
+                cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n( Manager Akuntansi & Keu )", bold_font3);
+                tableSignature.AddCell(cellSignatureContent);
+                cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n( Direktur Akuntansi & Keu )", bold_font3);
                 tableSignature.AddCell(cellSignatureContent);
                 cellSignatureContent.Colspan = 0;
                 cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n(   General Manager    )", bold_font3);
@@ -584,6 +586,9 @@ namespace Com.Efrata.Service.Purchasing.Lib.PDFTemplates
             else
             {
                 cellSignatureContent.Colspan = 2;
+                cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n( Manager Akuntansi & Keu )", bold_font3);
+                tableSignature.AddCell(cellSignatureContent);
+                cellSignatureContent.Colspan = 0;
                 cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n(   General Manager    )", bold_font3);
                 tableSignature.AddCell(cellSignatureContent);
                 cellSignatureContent.Phrase = new Phrase("\n\n\n\n\n\n\n(   Manager Pembelian    )", bold_font3);
