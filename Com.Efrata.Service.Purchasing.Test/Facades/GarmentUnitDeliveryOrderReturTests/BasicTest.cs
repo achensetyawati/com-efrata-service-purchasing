@@ -265,6 +265,7 @@ namespace Com.Efrata.Service.Purchasing.Test.Facades.GarmentUnitDeliveryOrderRet
             {
                 DONo = "DONo",
                 UnitDOType = "RETUR",
+                Storage = new Lib.ViewModels.IntegrationViewModel.StorageViewModel { name = "GUDANG BAHAN BAKU" },
                 Items = new List<GarmentUnitDeliveryOrderItemViewModel>
                 {
                     new GarmentUnitDeliveryOrderItemViewModel
