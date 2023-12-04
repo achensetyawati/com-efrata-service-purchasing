@@ -423,12 +423,15 @@ namespace Com.Efrata.Service.Purchasing.Test.Facades.GarmentUnitDeliveryOrderTes
                 {
                     Id = "1"
                 },
-                UnitDOType = "TRANSFER" };
+                UnitDOType = "TRANSFER",
+                Storage = new Lib.ViewModels.IntegrationViewModel.StorageViewModel { name = "" }
+            };
             Assert.True(viewModel.Validate(null).Count() > 0);
 
             GarmentUnitDeliveryOrderViewModel viewModelNullItems = new GarmentUnitDeliveryOrderViewModel
             {
-                RONo = "RONo"
+                RONo = "RONo",
+                Storage = new Lib.ViewModels.IntegrationViewModel.StorageViewModel { name = "" }
             };
             Assert.True(viewModelNullItems.Validate(null).Count() > 0);
 
@@ -442,7 +445,8 @@ namespace Com.Efrata.Service.Purchasing.Test.Facades.GarmentUnitDeliveryOrderTes
                         IsSave = true,
                         Quantity = 0
                     }
-                }
+                },
+                Storage = new Lib.ViewModels.IntegrationViewModel.StorageViewModel { name = "" }
             };
             Assert.True(viewModelWithItems.Validate(null).Count() > 0);
 
@@ -456,7 +460,8 @@ namespace Com.Efrata.Service.Purchasing.Test.Facades.GarmentUnitDeliveryOrderTes
                 {
                     Id = "1"
                 },
-                UnitDOType = "LAIN-LAIN"
+                UnitDOType = "LAIN-LAIN",
+                Storage = new Lib.ViewModels.IntegrationViewModel.StorageViewModel { name = "" }
             };
             Assert.True(viewModelLL.Validate(null).Count() > 0);
         }

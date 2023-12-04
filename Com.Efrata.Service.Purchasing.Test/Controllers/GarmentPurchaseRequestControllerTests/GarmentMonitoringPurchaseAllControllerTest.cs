@@ -83,7 +83,7 @@ namespace Com.Efrata.Service.Purchasing.Test.Controllers.GarmentPurchaseRequestC
 		}
 
         [Fact]
-		public void Should_OK_Get_Report_Data()
+		public async Task Should_OK_Get_Report_DataAsync()
 		{
 			var mockFacade = new Mock<IGarmentPurchaseRequestFacade>();
 			mockFacade.Setup(s => s.GetMonitoringPurchaseReport(null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, 25, "{}",7))
@@ -107,7 +107,7 @@ namespace Com.Efrata.Service.Purchasing.Test.Controllers.GarmentPurchaseRequestC
 
 			controller.ControllerContext.HttpContext.Request.Headers["x-timezone-offset"] = "0";
 			//Act
-			IActionResult response = controller.GetReport(null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, 25, "{}");
+			IActionResult response = await controller.GetReport(null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, 25, "{}");
 
 			//Assert
 			Assert.Equal((int)HttpStatusCode.OK, GetStatusCode(response));
