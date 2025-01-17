@@ -268,7 +268,8 @@ namespace Com.Efrata.Service.Purchasing.Lib.PDFTemplates
 
             if (model.UseVat)
             {
-                cellJustifyAllNoBorder.Phrase = new Phrase($"PPn {model.VatRate} % . . . . . . . . . . . . . .   {model.CurrencyCode}", normal_font);
+                //cellJustifyAllNoBorder.Phrase = new Phrase($"PPn {model.VatRate} % . . . . . . . . . . . . . .   {model.CurrencyCode}", normal_font);
+                cellJustifyAllNoBorder.Phrase = new Phrase($"PPn . . . . . . . . . . . . . .   {model.CurrencyCode}", normal_font);
                 tableVat.AddCell(cellJustifyAllNoBorder);
             }
             else
