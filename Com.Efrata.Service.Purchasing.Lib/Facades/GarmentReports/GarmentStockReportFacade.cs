@@ -16,6 +16,8 @@ using Com.Efrata.Service.Purchasing.Lib.Helpers;
 using Newtonsoft.Json;
 using Com.Moonlay.NetCore.Lib;
 using System.Net.Http;
+using Com.Efrata.Service.Purchasing.Lib.Models.PurchasingDispositionModel;
+using System.Drawing;
 
 namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentReports
 {
@@ -1994,10 +1996,12 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentReports
 
         public Tuple<List<GarmentStockByProductReportViewModel>, int> GetStockByProductNonFabric(int offset, string productCode, int page, int size, string Order)
         {
-            List<GarmentStockByProductReportViewModel> Query = GetStockByProductNonFabricQuery(offset, productCode).ToList();
+            var Query = GetStockByProductNonFabricQuery(offset, productCode);
+            Pageable<GarmentStockByProductReportViewModel> pageable = new Pageable<GarmentStockByProductReportViewModel>(Query.AsQueryable(), page - 1, size);
+            List<GarmentStockByProductReportViewModel> Data = pageable.Data.ToList<GarmentStockByProductReportViewModel>();
             int TotalData = Query.Count();
 
-            return Tuple.Create(Query, TotalData);
+            return Tuple.Create(Data, TotalData);
         }
     }
 }
