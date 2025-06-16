@@ -1651,7 +1651,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentReports
                                 && a.IsDeleted == false && b.IsDeleted == false
                                 && b.ProductName != "FABRIC"
                                 //&& categories1.Contains(b.ProductName)
-                                && b.ProductCode == (string.IsNullOrWhiteSpace(productCode) ? b.ProductCode : productCode)
+                                && b.ProductCode.Contains(string.IsNullOrWhiteSpace(productCode) ? b.ProductCode : productCode)
                                 select new GarmentStockByProductReportViewModelTemp
                                 {
                                     Buyer = prs != null ? prs.BuyerCode : "-",
