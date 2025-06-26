@@ -23,6 +23,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.ViewModels.GarmentReports
         public decimal EndingBalanceQty { get; set; }
         public string EndingUom { get; set; }
         public string PaymentMethod { get; set; }
+        public string BuyerName { get; set; }
     }
 
     public class GarmentStockReportViewModelTemp
@@ -33,6 +34,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.ViewModels.GarmentReports
         public string NoArticle { get; set; }
         //public string ProductName { get; set; }
         public string Buyer { get; set; }
+        public string BuyerName { get; set; }
         public decimal BeginningBalanceQty { get; set; }
         public string BeginningBalanceUom { get; set; }
         public decimal ReceiptCorrectionQty { get; set; }

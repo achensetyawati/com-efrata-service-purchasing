@@ -30,6 +30,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.ViewModels.GarmentReports
         public string Index { get; set; }
         public DateTime ReceiptDate { get; set; }
         public DateTime ExpendDate { get; set; }
+        public string BuyerName { get; set; }
 
 
     }
@@ -60,5 +61,6 @@ namespace Com.Efrata.Service.Purchasing.Lib.ViewModels.GarmentReports
         public DateTime ReceiptDate { get; set; }
         public DateTime ExpendDate { get; set; }
         public string ProductRemark { get; set; }
+        public string BuyerName { get; set; }
     }
 }
