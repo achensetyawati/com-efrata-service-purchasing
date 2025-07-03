@@ -466,7 +466,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentUnitReceiptNoteFacade
                                //&& b.CreatedUtc >= QueryReceipt.Select(x=> x.UpdateDate).FirstOrDefault()
                                select new StellingViewModels
                                {
-
+                                   id = a.Id,
                                    POSerialNumber = null,
                                    Quantity = null,
                                    Uom = b.UomUnit,
@@ -533,6 +533,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentUnitReceiptNoteFacade
                 {
                     StellingEndViewModels stelling = new StellingEndViewModels
                     {
+                        id = a.id,
                         POSerialNumber = a.POSerialNumber,
                         Quantity = a.Quantity,
                         Uom = a.Uom,
