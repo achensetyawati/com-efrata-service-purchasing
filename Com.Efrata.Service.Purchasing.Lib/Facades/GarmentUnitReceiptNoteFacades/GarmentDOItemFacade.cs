@@ -254,7 +254,7 @@ namespace Com.Efrata.Service.Purchasing.Lib.Facades.GarmentUnitReceiptNoteFacade
                 //&& w.UnitCode == (string.IsNullOrWhiteSpace(unitcode) ? w.UnitCode : unitcode)
                 && w.Rack == (string.IsNullOrWhiteSpace(rack) ? w.Rack : rack)
                 && w.ProductCode == (string.IsNullOrWhiteSpace(productcode) ? w.ProductCode : productcode)
-                && w.ProductName == "FABRIC"
+                && (w.ProductName == "FABRIC" || w.ProductName== "INTERLINNING")
                 );
 
             var data = Query.Select(x => new DOItemsViewModels
